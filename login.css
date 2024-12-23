@@ -1,0 +1,52 @@
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    
+background-image: url(https://darksoul-git.github.io/Blurred%20Side%20Navigation%20bar/windows-11-gradient-background-bloom-light-backgrounds-5k.png);
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+}
+.login-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.login-content h2 {
+    margin-bottom: 20px;
+}
+.login-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.login-content button {
+    width: 100%;
+    padding: 10px;
+    background-color: #37647e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.login-content button:hover {
+    background-color: #457fa0;
+}
+.sidenav {
+    display: none; /* Initially hidden */
+    width: 200px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 0;
+    top: 0;
+}

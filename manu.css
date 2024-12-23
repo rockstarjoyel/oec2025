@@ -1,0 +1,156 @@
+
+/* Glassmorphism effect for the container */
+.menucontainer {
+    background: rgba(255, 255, 255, 0.15); /* semi-transparent white background */
+    backdrop-filter: blur(15px); /* stronger frosted-glass effect */
+    -webkit-backdrop-filter: blur(15px); /* for Safari */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* enhanced shadow */
+    width: 320px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease; /* Smooth scale transition on hover */
+    box-sizing: border-box; /* Ensure padding doesn't affect overall size */
+    
+  }
+  
+  .menucontainer:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  /* Form group styling */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Label styling */
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #fff; /* White color for better contrast */
+  }
+  
+  /* Input and select styling (Neumorphism effect) */
+  select, input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    font-size: 15px;
+    background: #ffd900;
+    color: black;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(0, 0, 0, 0.5); /* Enhanced neumorphism */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  select:focus, input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.7); /* Focus state */
+    transform: scale(1.02); /* Slight zoom effect on focus */
+  }
+  
+  /* Button group styling */
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  /* Button styling (Neumorphism effect) */
+  button {
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    background: #f0f0f0;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphism effect */
+    color: #333;
+    transition: background-color 0.3s, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.3); /* Hover shadow */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  button:active {
+    box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.2), inset -4px -4px 6px rgba(255, 255, 255, 0.4); /* Active state for Neumorphism */
+    transform: scale(1); /* Reset zoom on click */
+  }
+  
+  /* Button color for different actions */
+  #addBtn, #addSubmenuBtn, #addChildMenuBtn {
+    background-color: #28a745;
+  }
+  
+  #editBtn, #editSubmenuBtn, #editChildMenuBtn {
+    background-color: #ffc107;
+  }
+  
+  #deleteBtn, #deleteSubmenuBtn, #deleteChildMenuBtn {
+    background-color: #dc3545;
+  }
+  
+  /* Button group layout */
+  .button-group button {
+    margin-right: 15px;
+    border-radius: 15px;
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .button-group button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Disabled button style */
+  button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
+  /* Upload section styling */
+  .upload-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .upload-container input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    font-size: 15px;
+    background: #f0f0f0;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphism */
+  }
+  
+  .upload-container button {
+    width: 18%;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    background-color: #007bff;
+    color: white;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphism */
+    transition: transform 0.3s ease, background-color 0.3s;
+  }
+  
+  .upload-container button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Zoom on hover */
+  }
+  
+  .upload-container input[type="file"] {
+    display: none;
+  }
+  

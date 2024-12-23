@@ -1,0 +1,151 @@
+
+
+
+.calendar {
+  width: 350px;
+  border: 1px solid #fbc02d; /* Bright yellow border */
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff3e0; /* Soft yellow background for the calendar */
+  margin: 20px auto;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transform: translateY(20px);
+  animation: slideUp 0.5s ease-out forwards; /* Slide-up animation */
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #000000; /* Bold yellow header background */
+  color: #ff2600; /* Dark brown text for contrast */
+  text-transform: uppercase; /* Uppercase for header text */
+  font-size: 18px; /* Larger font for better visibility */
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.calendar-header:hover {
+  background-color: #fbc02d; /* Hover effect for header */
+}
+
+.calendar-header h2 {
+  margin: 0;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 5px;
+  padding: 10px;
+  background-color: #333f47; /* Lighter yellow background for the days */
+  zoom: 0.8;
+}
+
+.calendar-day {
+  text-align: center;
+  padding: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 6px; /* Rounded corners for each day */
+  background-color: #fff8e1; /* Light yellow background for individual days */
+  color: #3e2723; /* Dark text for readability */
+  font-weight: bold; /* Bold text for days */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.2s ease-in-out; /* Animation on hover */
+}
+
+.calendar-day.highlight {
+  background-color: #ff9800; /* Orange-yellow for highlighted days */
+  color: white;
+}
+
+.calendar-day:hover {
+  background-color: #ffeb3b; /* Yellow hover effect */
+  color: #3e2723; /* Dark text on hover */
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.calendar-footer {
+  padding: 12px;
+  background-color: #fffde7; /* Pale yellow footer */
+  border-top: 1px solid #fbc02d;
+  text-align: center;
+  font-size: 14px; /* Smaller text for footer */
+  color: #f57f17; /* Darker yellow text for footer */
+  font-weight: 500;
+}
+
+.important-dates ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.important-dates li {
+  margin: 8px 0;
+  color: #f57f17; /* Dark yellow text for important dates */
+  font-size: 14px;
+  font-weight: bold; /* Bold important dates */
+  transition: color 0.3s ease;
+}
+
+.important-dates li:hover {
+  text-decoration: underline;
+  color: #fbc02d; /* Bold yellow hover text */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+button {
+  background-color: #ffb300; /* Yellow-orange button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold; /* Bold text on button */
+  font-size: 14px; /* Button text size */
+}
+
+button:hover {
+  background-color: #ffa000; /* Darker yellow-orange when hovering */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+button:disabled {
+  background-color: #fbc02d; /* Soft yellow when button is disabled */
+  cursor: not-allowed;
+  opacity: 0.6; /* Make disabled button slightly transparent */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.important-dates li {
+  animation: fadeIn 1s ease-out;
+}
+
+
+input[type="text"] {
+  text-transform: uppercase;
+}

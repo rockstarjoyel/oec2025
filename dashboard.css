@@ -1,0 +1,122 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(to right, rgb(255,207,0), rgb(246,203,10));
+    color: #fff;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    position: relative;
+}
+
+.neumorphic {
+    background: #2f2f2f; /* Dark background for neumorphism */
+    border-radius: 15px;
+    box-shadow: 
+        8px 8px 15px rgba(0, 0, 0, 0.5), 
+        -8px -8px 15px rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    animation: bounceIn 0.5s forwards;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0); }
+    60% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+th, td {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 12px;
+    text-align: left;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+th {
+    background-color: rgba(76, 175, 80, 0.9);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.02);
+}
+
+.fadeIn {
+    animation: fadeInRow 0.5s forwards;
+}
+
+@keyframes fadeInRow {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.edit-button {
+    background-color: rgba(0, 140, 255, 0.9); /* Orange */
+    color: white;
+}
+
+.delete-button {
+    background-color: rgba(231, 76, 60, 0.9); /* Red */
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: rgba(255, 140, 0, 1); /* Darker Orange */
+}
+
+.delete-button:hover {
+    background-color: rgba(192, 57, 43, 1); /* Darker Red */
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+}
