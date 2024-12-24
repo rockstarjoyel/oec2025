@@ -30,6 +30,11 @@ function logout() {
 }
 
   
+
+
+
+
+
     const modal = document.getElementById('myModal');
     const createMenuModal = document.getElementById('createMenuModal');
     const openModalButton = document.getElementById('openModalButton');
@@ -37,10 +42,20 @@ function logout() {
     const createMenuButton = document.getElementById('createMenuButton');
     const submitMenuButton = document.getElementById('submitMenu');
 
+    document.addEventListener('DOMContentLoaded', function() {
+      var profileButton = document.getElementById('profile-btn');
+      
+      if (profileButton) {
+        profileButton.onclick = function() {
+          modal.style.display = 'block';
+          console.log('Profile button clicked');
+        };
+      } else {
+        console.error('Element with ID "profile-btn" not found');
+      }
+    });
     
-
-  openModalButton.onclick = function() {
-    modal.style.display = 'block';
+;
   
 
   // Close the modals when the 'x' is clicked
@@ -69,7 +84,7 @@ function logout() {
 
   // Handle the "Submit" button for creating the menu
  
-}
+
 
 // Check if the profession is 'admin' or 'manager'
 document.addEventListener('DOMContentLoaded', async () => {

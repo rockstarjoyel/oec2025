@@ -1,35 +1,35 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Get modal and button elements
+    var container = document.getElementById("containerModal");
+    var btn = document.getElementById("companyContactButton");
+    var span = document.getElementsByClassName("close-btn")[0];
 
-var container = document.getElementById("containerModal");
+    // Open the modal when the link is clicked
+    btn.onclick = function() {
+        container.style.display = "block";
+    }
 
-
-var btn = document.getElementById("companyContactButton");
-
-
-var span = document.getElementsByClassName("close-btn")[0];
-
-
-btn.onclick = function() {
-    container.style.display = "block";
-}
-
-
-span.onclick = function () {
-    console.log("Close button clicked"); 
-    container.style.display = "none";
-};
-
-window.onclick = function(event) {
-    if (event.target == container) {
+    // Close the modal when the close button is clicked
+    span.onclick = function () {
+        console.log("Close button clicked");
         container.style.display = "none";
-    }
-}
+    };
 
-
-document.getElementById('currencyDropdown').addEventListener('change', function() {
-    const selectedCurrency = this.value;
-    if (selectedCurrency) {
-        // alert(`You selected: ${selectedCurrency}`);
+    // Close the modal if the user clicks outside of it
+    window.onclick = function(event) {
+        if (event.target == container) {
+            container.style.display = "none";
+        }
     }
+
+    // Handle currency dropdown change
+    document.getElementById('currencyDropdown').addEventListener('change', function() {
+        const selectedCurrency = this.value;
+        if (selectedCurrency) {
+            // Display the selected currency or use it for further actions
+            console.log(`You selected: ${selectedCurrency}`);
+        }
+    });
 });
 
   
@@ -511,11 +511,9 @@ denominationDropdown.addEventListener("change", function () {
 
 
 
-
-
-// Get modal and button elements
+// Get modal and link elements
 var countryRemitenceModal = document.getElementById("countryRemitenceInfoModal");
-var feedbackButton = document.getElementById("feedbackButton");
+var countryRemitenceBtn = document.getElementById("countryRemitenceBtn");
 var closeModalBtn = document.querySelector(".close-btn");
 
 // Get country, currency message, and product dropdowns
@@ -523,9 +521,10 @@ var countrySelect = document.getElementById("countrySelect");
 var currencyMessage = document.getElementById("currencyMessage");
 var productDropdown = document.getElementById("productDropdown");
 
-// When the user clicks the button, open the modal
-feedbackButton.onclick = function() {
-    countryRemitenceModal.style.display = "block";
+// When the user clicks the link, open the modal
+countryRemitenceBtn.onclick = function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    countryRemitenceModal.style.display = "block"; // Show the modal
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -550,14 +549,14 @@ countrySelect.onchange = function() {
     } else if (selectedCountry === "Philippines") {
         currencyMessage.textContent = "Currency: PHP (PESO)";
         productDropdown.disabled = false;
-    } else if (selectedCountry === "Bangaldesh") {
+    } else if (selectedCountry === "Bangladesh") {
         currencyMessage.textContent = "Currency: BDT (Bangladeshi Taka)";
         productDropdown.disabled = false;
     } else if (selectedCountry === "Pakistan") {
-        currencyMessage.textContent = "Currency: PKR (Paksitani Ruppee)";
+        currencyMessage.textContent = "Currency: PKR (Pakistani Rupee)";
         productDropdown.disabled = false;
     } else if (selectedCountry === "United Kingdom") {
-        currencyMessage.textContent = "Currency: GBP (Greater Britan Pound)";
+        currencyMessage.textContent = "Currency: GBP (Great Britain Pound)";
         productDropdown.disabled = false;
     } else if (selectedCountry === "USA") {
         currencyMessage.textContent = "Currency: USD (US Dollar)";
@@ -565,8 +564,8 @@ countrySelect.onchange = function() {
     } else if (selectedCountry === "Australia") {
         currencyMessage.textContent = "Currency: AUD (Australian Dollar)";
         productDropdown.disabled = false;
-    } else if (selectedCountry === "Baharin") {
-        currencyMessage.textContent = "Currency: BHD (Bahraini dinar)";
+    } else if (selectedCountry === "Bahrain") {
+        currencyMessage.textContent = "Currency: BHD (Bahraini Dinar)";
         productDropdown.disabled = false;
     } else if (selectedCountry === "Canada") {
         currencyMessage.textContent = "Currency: CAD (Canadian Dollar)";
@@ -575,7 +574,7 @@ countrySelect.onchange = function() {
         currencyMessage.textContent = "Currency: CNY (Renminbi)";
         productDropdown.disabled = false;
     } else if (selectedCountry === "Denmark") {
-        currencyMessage.textContent = "Currency: DKK (Danish krone)";
+        currencyMessage.textContent = "Currency: DKK (Danish Krone)";
         productDropdown.disabled = false;
     } else if (selectedCountry === "Egypt") {
         currencyMessage.textContent = "Currency: EGP (Egyptian Pound)";
@@ -583,8 +582,8 @@ countrySelect.onchange = function() {
     } else if (selectedCountry === "Europe") {
         currencyMessage.textContent = "Currency: Euro (EURO)";
         productDropdown.disabled = false;
-    } else if (selectedCountry === "Srilanka") {
-        currencyMessage.textContent = "Currency: LKR (Sri Lankan Ruppee)";
+    } else if (selectedCountry === "Sri Lanka") {
+        currencyMessage.textContent = "Currency: LKR (Sri Lankan Rupee)";
         productDropdown.disabled = false;
     } else if (selectedCountry === "Thailand") {
         currencyMessage.textContent = "Currency: THB (Thai Baht)";
@@ -592,26 +591,26 @@ countrySelect.onchange = function() {
     } else if (selectedCountry === "Hong Kong") {
         currencyMessage.textContent = "Currency: HKD (Hong Kong Dollar)";
         productDropdown.disabled = false;
-    } else if (selectedCountry === "Indonasia") {
-        currencyMessage.textContent = "Currency: IDR Rp (Indonesian rupiah)";
+    } else if (selectedCountry === "Indonesia") {
+        currencyMessage.textContent = "Currency: IDR Rp (Indonesian Rupiah)";
         productDropdown.disabled = false;
     } else if (selectedCountry === "Jordan") {
-        currencyMessage.textContent = "Currency: JOD (Jordanian dinar)";
+        currencyMessage.textContent = "Currency: JOD (Jordanian Dinar)";
         productDropdown.disabled = false;
     } else if (selectedCountry === "Kuwait") {
-        currencyMessage.textContent = "Currency: KWD (Kuwaiti dinar)";
+        currencyMessage.textContent = "Currency: KWD (Kuwaiti Dinar)";
         productDropdown.disabled = false;
     } else if (selectedCountry === "Malaysia") {
-        currencyMessage.textContent = "Currency: MYR (Malaysian ringgit)";
+        currencyMessage.textContent = "Currency: MYR (Malaysian Ringgit)";
         productDropdown.disabled = false;
     } else if (selectedCountry === "Nepal") {
-        currencyMessage.textContent = "Currency: NPR (Nepalese rupee)";
+        currencyMessage.textContent = "Currency: NPR (Nepalese Rupee)";
         productDropdown.disabled = false;
     } else if (selectedCountry === "New Zealand") {
-        currencyMessage.textContent = "Currency: NZD (New Zealand dollar)";
+        currencyMessage.textContent = "Currency: NZD (New Zealand Dollar)";
         productDropdown.disabled = false;
     } else if (selectedCountry === "Norway") {
-        currencyMessage.textContent = "Currency: NOK (Norwegian krone)";
+        currencyMessage.textContent = "Currency: NOK (Norwegian Krone)";
         productDropdown.disabled = false;
     } else if (selectedCountry === "Oman") {
         currencyMessage.textContent = "Currency: OMR (Omani Riyal)";
@@ -628,24 +627,18 @@ countrySelect.onchange = function() {
     } else if (selectedCountry === "South Africa") {
         currencyMessage.textContent = "Currency: ZAR (South African Rand)";
         productDropdown.disabled = false;
-    } 
-    else if (selectedCountry === "Switzerland") {
+    } else if (selectedCountry === "Switzerland") {
         currencyMessage.textContent = "Currency: CHF (Swiss Franc)";
         productDropdown.disabled = false;
-    } 
-    else if (selectedCountry === "Swedan") {
+    } else if (selectedCountry === "Sweden") {
         currencyMessage.textContent = "Currency: SEK (Swedish Krona)";
         productDropdown.disabled = false;
-    } 
-    
-    
-    
-    
-    else {
+    } else {
         currencyMessage.textContent = "";
         productDropdown.disabled = true; // Disable product dropdown if no country is selected
     }
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const productDropdown = document.getElementById("productDropdown");

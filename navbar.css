@@ -38,6 +38,7 @@
 
 
 /*card*/
+/* General styles */
 
 .quote-container {
     text-align: center; /* Center the text */
@@ -47,13 +48,6 @@
     background: rgba(0, 0, 0, 0.1); /* Optional: background for visibility */
     border-radius: 10px; /* Optional: rounded corners */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Optional: shadow for depth */
-}
-
-/* Media query for larger screens */
-@media (min-width: 768px) {
-    .quote-container {
-        font-size: 24px; /* Larger font size for bigger screens */
-    }
 }
 
 @keyframes fadeInScaleUp {
@@ -95,8 +89,8 @@
         4px 4px 20px rgba(255, 0, 0, 0.2), /* Light shadow */
         -4px -4px 20px rgba(255, 255, 255, 0.1); /* Dark shadow for neumorphism */
     transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-    height: 300px;
-    min-height: 300px;
+    height: 350px; /* Increased card height */
+    min-height: 350px; /* Ensure minimum height */
     font-size: medium;
     position: relative;
     overflow: hidden; /* Hide overflow during rotation */
@@ -149,11 +143,73 @@
     }
 }
 
+/* Responsive Styles */
 
-input[type="text"] {
-    text-transform: uppercase;
-  }
-  
+/* For mobile devices */
+@media (max-width: 576px) {
+    .container {
+        padding: 10px;
+        zoom: 1; /* Remove zoom for better readability */
+    }
+
+    .quote-container {
+        font-size: 5vw; /* Make text larger on small screens */
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .card {
+        height: 250px; /* Adjusted card height for mobile */
+        min-height: 250px; /* Ensure mobile cards are not too short */
+        padding: 10px; /* Reduced padding */
+    }
+
+    h2 {
+        font-size: 18px; /* Adjust header size for smaller screens */
+    }
+}
+
+/* For tablets and above */
+@media (min-width: 577px) and (max-width: 1024px) {
+    .container {
+        padding: 15px;
+        zoom: 0.9; /* Adjust zoom for better scale */
+    }
+
+    .quote-container {
+        font-size: 3vw; /* Adjust font size */
+    }
+
+    .card {
+        height: 300px; /* Adjusted card height for tablets */
+        min-height: 300px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+/* For large screens (desktops) */
+@media (min-width: 1025px) {
+    .container {
+        zoom: 0.87; /* Adjust zoom to maintain consistent scaling */
+    }
+
+    .quote-container {
+        font-size: 2vw; /* Ideal font size for large screens */
+    }
+
+    .card {
+        height: 350px; /* Larger height for cards on desktops */
+        min-height: 350px;
+    }
+
+    h2 {
+        font-size: 24px; /* Larger text for headers on large screens */
+    }
+}
+
 
 
 .submenu, .child-submenu {
@@ -282,7 +338,7 @@ nav ul {
     justify-content: flex-start;
     
     align-items: center;
-    margin-left: 220px;
+    margin-left: 265px;
     gap: 4.5px;
     
     font-family: 'Times New Roman', Times, serif;

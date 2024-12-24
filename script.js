@@ -335,44 +335,40 @@ fetch('http://localhost:5000/api/about-orient-exchange')
     console.error('Error fetching the data:', error); 
   });
 
+
+
+
   document.addEventListener('DOMContentLoaded', function () {
-    // Get elements
     const aboutOrientBtn = document.getElementById('aboutOrientBtn');
     const aboutOrientModal = document.getElementById('aboutOrientModal');
     const aboutOrientClose = document.getElementById('aboutOrientClose');
     const aboutOrientContent = document.getElementById('aboutOrientContent');
   
-    // Function to open the modal when the button is clicked
-    aboutOrientBtn.addEventListener('click', async () => {
-      // Open the modal
-      aboutOrientModal.style.display = "block";
+    // Open modal when the <a> tag is clicked
+    aboutOrientBtn.addEventListener('click', async (event) => {
+      event.preventDefault(); // Prevent default link behavior (i.e., page reload)
+      aboutOrientModal.style.display = "block"; // Show the modal
   
-      // Optionally, fetch content for the modal
       try {
         const response = await fetch('http://localhost:5000/api/about-orient-exchange');
         if (!response.ok) {
-          throw new Error('HTTP error! Status: ' + response.status);
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
   
         const data = await response.json();
-  
-        if (data.success) {
-          aboutOrientContent.innerHTML = data.content;
-        } else {
-          aboutOrientContent.innerHTML = 'No content available.';
-        }
+        aboutOrientContent.innerHTML = data.success ? data.content : 'No content available.';
       } catch (error) {
-        console.error('Error fetching content:', error);
         aboutOrientContent.innerHTML = 'Error loading content.';
+        console.error(error);
       }
     });
   
-    // Function to close the modal when the "x" button is clicked
+    // Close modal when the close button is clicked
     aboutOrientClose.addEventListener('click', () => {
       aboutOrientModal.style.display = "none";
     });
   
-    // Close the modal if the user clicks outside of the modal
+    // Close modal if the user clicks outside of the modal
     window.addEventListener('click', (event) => {
       if (event.target === aboutOrientModal) {
         aboutOrientModal.style.display = "none";
@@ -380,7 +376,7 @@ fetch('http://localhost:5000/api/about-orient-exchange')
     });
   });
   
-
+  
 
 // Wait for the DOM to fully load
 document.addEventListener("DOMContentLoaded", () => {
@@ -412,6 +408,30 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Show dropdown on hover
+  document.getElementById('navbarButton').addEventListener('mouseover', function() {
+    document.getElementById('dropdownMenu').style.display = 'block';
+  });
+
+  // Hide dropdown when mouse leaves the button or dropdown
+  document.getElementById('navbarButton').addEventListener('mouseout', function() {
+    document.getElementById('dropdownMenu').style.display = 'none';
+  });
+
+  document.getElementById('dropdownMenu').addEventListener('mouseover', function() {
+    this.style.display = 'block';
+  });
+
+  document.getElementById('dropdownMenu').addEventListener('mouseout', function() {
+    this.style.display = 'none';
+  });
+});
 
 
 

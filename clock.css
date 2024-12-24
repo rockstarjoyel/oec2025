@@ -7,6 +7,7 @@
   width: 80%;
   max-width: 800px;
   animation: fadeIn 1.5s ease-in-out;  /* Apply fade-in animation */
+  margin: 0 auto; /* Center the container */
 }
 
 /* Fade-in effect */
@@ -25,12 +26,13 @@
   }
 }
 
-
 .clock-container {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
   transition: all 0.5s ease-in-out;  /* Smooth transition for layout changes */
+  flex-wrap: wrap; /* Allow clocks to wrap on smaller screens */
+  gap: 20px; /* Add space between items */
 }
 
 .clock {
@@ -42,16 +44,67 @@
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   margin-bottom: 20px;
-  width: 98%;
+  width: 100%; /* Default to half-width on larger screens */
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
   text-align: center;
 }
 
+/* Hover effect for the clocks */
 .clock:hover {
   transform: scale(1.05) translateY(-5px); /* Adds upward movement */
   background-color: #34495e;
   animation: bounce 0.3s ease-in-out;
 }
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1024px) {
+  .clockcontainer {
+    padding: 30px; /* Adjust padding for medium-sized screens */
+  }
+
+  .clock-container {
+    justify-content: center; /* Center clocks on medium-sized screens */
+  }
+
+  .clock {
+    width: 48%; /* Adjust width of the clocks on medium screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .clockcontainer {
+    padding: 25px; /* Adjust padding for smaller screens */
+  }
+
+  .clock-container {
+    justify-content: center; /* Center clocks */
+    gap: 10px; /* Decrease gap for smaller screens */
+  }
+
+  .clock {
+    width: 100%; /* Full width on small screens */
+    font-size: 24px; /* Reduce font size */
+    padding: 15px; /* Reduce padding */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .clockcontainer {
+    padding: 20px; /* Further reduce padding for very small screens */
+    width: 90%; /* Increase width on very small screens */
+  }
+
+  .clock-container {
+    gap: 5px; /* Further decrease gap for very small screens */
+  }
+
+  .clock {
+    width: 100%; /* Full width for the clock */
+    font-size: 20px; /* Further reduce font size */
+    padding: 12px; /* Further reduce padding */
+  }
+}
+
 
 @keyframes bounce {
   0% {
