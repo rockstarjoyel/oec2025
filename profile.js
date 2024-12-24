@@ -18,7 +18,7 @@ if (username) {
    
 } else {
     
-    window.location.href = "login.html";
+    window.location.href = " ";
 }
 
 function logout() {
