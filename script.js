@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.clear();
 
     // Redirect to the login page
-    window.location.href = 'login.html';  // Change 'login.html' to the correct path to your login page
+    window.location.href = '';  // Change 'login.html' to the correct path to your login page
   });
 });
 
